@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'maven'
+}
+
+def config = rootProject.ext.android
+def library = rootProject.ext.dependencies
+def maven = rootProject.ext.maven
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+
+        testInstrumentationRunner config.AndroidJUnitRunner
+    }
+
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation library.kotlin_stdlib
+    implementation library.core_ktx
+    implementation library.appcompat
+    implementation library.material
+    implementation library.recyclerview
+    implementation library.constraintlayout
+    testImplementation library.junit
+    androidTestImplementation library.android_junit
+
+    api library.tencent_tbs
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: maven.repositoryUrl) {
+                authentication(userName: maven.userName, password: maven.password)
+            }
+            pom.project {
+                version maven.version
+                artifactId 'lib_tbs'
+                groupId maven.groupId
+                packaging maven.packaging
+                description 'tbs lib for android'
+            }
+        }
+    }
+}

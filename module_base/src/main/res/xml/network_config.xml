@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--配置android9.0可以支持http-->
+    <base-config cleartextTrafficPermitted="true">
+        <!--配置Android7.0之后可以抓包https-->
+        <trust-anchors>
+            <certificates src="system" overridePins="true" />
+            <certificates src="user" overridePins="true" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

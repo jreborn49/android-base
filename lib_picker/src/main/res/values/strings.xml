@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">lib_picker</string>
+    <string name="picture_message_max_num">最多只能选择%1$s张图片</string>
+</resources>

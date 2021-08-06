@@ -1,0 +1,5 @@
+<resources>
+    <string name="net_error">网络异常</string>
+    <string name="system_error">系统错误</string>
+    <string name="connect_error">连接服务器失败</string>
+</resources>

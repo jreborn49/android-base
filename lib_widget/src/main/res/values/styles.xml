@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ClearEditText">
+        <!--设置删除按钮的图标-->
+        <attr name="clearIcon" format="reference"/>
+        <!--设置是否有焦点才显示删除按钮-->
+        <attr name="focusVisibility" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="SupportTextView">
+        <attr name="fontStroke" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="medium" value="1"/>
+            <enum name="bold" value="2"/>
+        </attr>
+        <attr name="prefixTextColor" format="color"/>
+        <attr name="prefixText" format="reference|string"/>
+        <attr name="suffixTextColor" format="color"/>
+        <attr name="suffixText" format="reference|string"/>
+    </declare-styleable>
+
+</resources>

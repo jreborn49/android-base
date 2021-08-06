@@ -1,0 +1,17 @@
+rootProject.name = "android-base"
+include ':app'
+
+include ':lib_network'
+include ':lib_glide'
+include ':lib_widget'
+include ':lib_notification'
+include ':lib_update'
+include ':lib_picker'
+include ':lib_jpush'
+include ':lib_lbsamap'
+include ':lib_bdmap'
+include ':lib_livedata'
+include ':lib_media'
+include ':lib_tbs'
+include ':lib_base'
+include ':module_base'
