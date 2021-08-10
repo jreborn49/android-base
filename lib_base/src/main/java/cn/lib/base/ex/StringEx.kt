@@ -9,7 +9,7 @@ fun CharSequence?.isNotNullOrEmpty(): Boolean {
 }
 
 fun String?.judgeNull(): String {
-    return if (this.isNullOrEmpty() || this == "null") {
+    return if (this.isNullOrEmpty() || this.lowercase() == "null") {
         ""
     } else {
         this

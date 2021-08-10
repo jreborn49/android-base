@@ -40,7 +40,10 @@ abstract class BaseBindActivity<VB : ViewBinding> : AppCompatActivity() {
         initData()
 
         logD("${javaClass.simpleName} onCreate")
+        create(savedInstanceState)
     }
+
+    open fun create(savedInstanceState: Bundle?) {}
 
     private fun initTitleBar() {
         titleBar = binding.root.findViewById(R.id.title_bar)
@@ -74,25 +77,37 @@ abstract class BaseBindActivity<VB : ViewBinding> : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         logD("${javaClass.simpleName} onResume")
+        resume()
     }
 
+    open fun resume() {}
+
     override fun onStop() {
+        stop()
         super.onStop()
         logD("${javaClass.simpleName} onStop")
     }
 
+    open fun stop() {}
+
     override fun onPause() {
+        pause()
         super.onPause()
         logD("${javaClass.simpleName} onPause")
     }
+
+    open fun pause() {}
 
     override fun onDestroy() {
         if (eventBus() && EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().unregister(this)
         }
+        destroy()
         super.onDestroy()
         logD("${javaClass.simpleName} onDestroy")
     }
+
+    open fun destroy() {}
 
     @Suppress("UNCHECKED_CAST")
     open fun createViewBinding(): VB {

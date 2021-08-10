@@ -34,19 +34,17 @@ abstract class WebviewActivity<VB : ViewBinding> : BaseBindActivity<VB>(),
         wv?.loadUrl(url)
     }
 
-    override fun onResume() {
+    override fun resume() {
         wv?.onResume()
         wv?.resumeTimers()
-        super.onResume()
     }
 
-    override fun onPause() {
+    override fun pause() {
         wv?.onPause()
         wv?.pauseTimers()
-        super.onPause()
     }
 
-    override fun onDestroy() {
+    override fun destroy() {
         val parent = wv?.parent
         if (parent != null && wv != null) {
             (parent as ViewGroup).removeView(wv)
@@ -57,7 +55,6 @@ abstract class WebviewActivity<VB : ViewBinding> : BaseBindActivity<VB>(),
         wv?.clearHistory()
         wv?.removeAllViews()
         wv?.destroy()
-        super.onDestroy()
     }
 
     override fun onBackPressed() {
