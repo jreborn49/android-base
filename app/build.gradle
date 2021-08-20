@@ -48,4 +48,7 @@ dependencies {
     implementation library.constraintlayout
     testImplementation library.junit
     androidTestImplementation library.android_junit
+
+    implementation library.lib_base
+    implementation library.lib_picker
 }

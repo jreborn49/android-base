@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/StudioProjects/android-base/app/src/main/res/layout/activity_main.xml" value="0.2947916666666667" />
         <entry key="..\:/StudioProjects/jreborn_base/app/src/main/res/layout/activity_main.xml" value="0.23867753623188406" />
+        <entry key="..\:/gradle/caches/transforms-2/files-2.1/ff01dd316e531e56bdef59d62ac69778/jetified-Android-PickerView-4.1.9/res/layout/pickerview_options.xml" value="0.2947916666666667" />
       </map>
     </option>
   </component>

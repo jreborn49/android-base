@@ -2,13 +2,11 @@ package cn.base
 
 import android.app.Application
 import android.content.Context
-import android.os.StrictMode
 import cn.lib.base.BaseConfig
 import cn.lib.base.ex.configWebViewCacheDirWithAndroidP
 import com.blankj.utilcode.util.Utils
 import com.xiaojinzi.component.Component
 import com.xiaojinzi.component.Config
-
 
 abstract class BaseApplication : Application(), BaseConfig {
 
@@ -18,7 +16,6 @@ abstract class BaseApplication : Application(), BaseConfig {
     }
 
     override fun onCreate() {
-        strictBuild()
         super.onCreate()
 
         initSdk()
@@ -60,30 +57,5 @@ abstract class BaseApplication : Application(), BaseConfig {
 
         // 框架还带有检查重复的路由和重复的拦截器等功能,在 `debug` 的时候开启它
         Component.check()
-    }
-
-    private fun strictBuild() {
-        if (BaseConfig.config.isDebug()) {
-            StrictMode.setThreadPolicy(
-                StrictMode.ThreadPolicy.Builder()
-//                    .detectDiskReads()
-//                    .detectDiskWrites()
-//                    .detectNetwork()
-                    .detectAll()
-                    .penaltyLog()
-                    .build()
-            )
-            StrictMode.setVmPolicy(
-                StrictMode.VmPolicy.Builder()
-//                    .detectLeakedSqlLiteObjects()
-//                    .detectLeakedClosableObjects()
-//                    .detectLeakedRegistrationObjects()
-//                    .detectUnsafeIntentLaunch()
-                    .detectAll()
-                    .penaltyLog()
-//                    .penaltyDeath()
-                    .build()
-            )
-        }
     }
 }
