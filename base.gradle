@@ -1,0 +1,156 @@
+ext {
+
+    kotlin_version = '1.5.21'
+    jreborn_version = '1.0.7-SNAPSHOT'
+    component_version = 'v1.9.2-androidx-java8'
+    walle_version = "1.1.7"
+    coroutines_version = '1.4.3'
+    utilcode_version = '1.30.6'
+    retrofit_version = '2.9.0'
+    moshi_version = '1.12.0'
+    lifecycle_version = '2.3.1'
+    glide_version = '4.12.0'
+    material_dialogs_version = '3.3.0'
+    material_version = '1.3.0'
+    permissionsdispatcher_version = '4.8.0'
+    room_version = '2.2.5'
+    recyclerview_version = '1.1.0'
+    constraintlayout_version = '1.1.3'
+    appcompat_version = '1.3.0'
+    corektx_version = '1.3.2'
+    log_interceptor_version = '4.9.1'
+    eventbus_version = '3.2.0'
+    autosize_version = '1.2.1'
+    brv_adapter_version = '3.0.4'
+    swiperefreshlayout_version = '1.1.0'
+    app_update_version = '3.0.4'
+    xpopup_version = '2.4.0'
+    pickview_version = '4.1.9'
+    pictureselector_version = 'v2.7.3-rc06'
+    jcore_version = '2.8.6'
+    jpush_version = '4.1.0'
+    gif_drawable_version = '1.2.23'
+    navigation_fragment_ktx_version = "2.3.5"
+    documentfile_version = "1.0.1"
+    amap_2d = "6.0.0"
+    amap_location = "5.3.1"
+    amap_search = "7.9.0"
+    gsy_player_version = "v8.1.5-jitpack"
+    tbs_version = "43939"
+    and_ratingbar_version = "1.0.6"
+    compose_version = "1.0.0"
+
+    classpath = [
+            "component_classpath": "com.github.xiaojinzi123.Component:component-plugin:$component_version",
+            "walle_classpath"    : "com.meituan.android.walle:plugin:$walle_version"
+    ]
+
+    maven = [
+            repositoryUrl: 'http://47.108.118.246:18081/repository/maven_android_snapshots/',
+            userName     : 'admin',
+            password     : 'BKvito',
+            version      : jreborn_version,
+            groupId      : 'cn.jreborn.base',
+            packaging    : 'aar'
+    ]
+
+    dependencies = [
+            "kotlin_stdlib"                  : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            "core_ktx"                       : "androidx.core:core-ktx:$corektx_version",
+            "appcompat"                      : "androidx.appcompat:appcompat:$appcompat_version",
+            "material"                       : "com.google.android.material:material:$material_version",
+            "recyclerview"                   : "androidx.recyclerview:recyclerview:$recyclerview_version",
+            "constraintlayout"               : "androidx.constraintlayout:constraintlayout:$constraintlayout_version",
+            "junit"                          : 'junit:junit:4.13.2',
+            "kotlinx_coroutines"             : ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+                                                "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"],
+            "android_junit"                  : ['androidx.test.ext:junit:1.1.2',
+                                                'androidx.test.espresso:espresso-core:3.3.0'],
+
+            "utilcodex"                      : "com.blankj:utilcodex:$utilcode_version",
+
+            "component_api"                  : "com.github.xiaojinzi123.Component:component-impl-ktx:$component_version",
+            "component_compiler"             : "com.github.xiaojinzi123.Component:component-compiler:$component_version",
+
+            "retrofit"                       : ["com.squareup.okhttp3:logging-interceptor:$log_interceptor_version",
+                                                "com.squareup.retrofit2:retrofit:$retrofit_version",
+                                                "com.squareup.retrofit2:converter-moshi:$retrofit_version",
+                                                "com.squareup.retrofit2:converter-scalars:$retrofit_version"],
+
+            "moshi_ktx"                      : "com.squareup.moshi:moshi-kotlin:$moshi_version",
+            "moshi_codegen"                  : "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version",
+
+            "lifecycle_runtime"              : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            "lifecycle_process"              : "androidx.lifecycle:lifecycle-process:$lifecycle_version",
+            "livedata"                       : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            "viewmodel"                      : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            "lifecycle_common"               : "androidx.lifecycle:lifecycle-common:$lifecycle_version",
+            "livedata_core"                  : "androidx.lifecycle:lifecycle-livedata-core:$lifecycle_version",
+
+            "glide"                          : "com.github.bumptech.glide:glide:$glide_version",
+            "glide_compiler"                 : "com.github.bumptech.glide:compiler:$glide_version",
+
+            "eventbus"                       : "org.greenrobot:eventbus:$eventbus_version",
+            "autosize"                       : "me.jessyan:autosize:$autosize_version",
+
+            "base_adapter"                   : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$brv_adapter_version",
+            "swiperefresh"                   : "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout_version",
+
+            "app_update"                     : "com.github.azhon:AppUpdate:$app_update_version",
+            "xpopup"                         : "com.github.li-xiaojun:XPopup:$xpopup_version",
+
+            "material_dialogs"               : ["com.afollestad.material-dialogs:lifecycle:$material_dialogs_version",
+                                                "com.afollestad.material-dialogs:core:$material_dialogs_version"],
+
+            "picker_view"                    : "com.contrarywind:Android-PickerView:$pickview_version",
+            "picker_picture"                 : "io.github.lucksiege:pictureselector:$pictureselector_version",
+
+            "jcore"                          : "cn.jiguang.sdk:jcore:$jcore_version",
+            "jpush"                          : "cn.jiguang.sdk:jpush:$jpush_version",
+
+            "amap2d"                         : "com.amap.api:map2d:$amap_2d",
+            "amap_location"                  : "com.amap.api:location:$amap_location",
+            "amap_search"                    : "com.amap.api:search:$amap_search",
+
+            "permissionsdispatcher"          : "com.github.permissions-dispatcher:permissionsdispatcher:$permissionsdispatcher_version",
+            "permissionsdispatcher_processor": "com.github.permissions-dispatcher:permissionsdispatcher-processor:$permissionsdispatcher_version",
+
+            "room"                           : ["androidx.room:room-runtime:$room_version",
+                                                "androidx.room:room-ktx:$room_version"],
+            "room_compiler"                  : "androidx.room:room-compiler:$room_version",
+
+            "gif_drawable"                   : "pl.droidsonroids.gif:android-gif-drawable:$gif_drawable_version",
+
+            "navigation"                     : "androidx.navigation:navigation-fragment-ktx:$navigation_fragment_ktx_version",
+            "documentfile"                   : "androidx.documentfile:documentfile:$documentfile_version",
+
+            "gsy_video_player"               : "com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-java:$gsy_player_version",
+            "gsy_video_player_exo_player2"   : "com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-exo_player2:$gsy_player_version",
+            "gsy_video_player_armv7a"        : "com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-armv7a:$gsy_player_version",
+            "gsy_video_player_ex_so"         : "com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-ex_so:$gsy_player_version",
+
+            "tencent_tbs"                    : "com.tencent.tbs.tbssdk:sdk:$tbs_version",
+            "and_ratingbar"                  : "com.github.wsj1024:AndRatingBar:$and_ratingbar_version",
+
+            "androidx_compose"               : ["androidx.compose.ui:ui:$compose_version",
+                                                "androidx.compose.material:material:$compose_version",
+                                                "androidx.compose.ui:ui-tooling-preview:$compose_version"],
+            "activity_compose"               : "androidx.activity:activity-compose:1.3.0-alpha06",
+
+            "lib_base"                       : "cn.jreborn.base:lib_base:$jreborn_version",
+            "lib_glide"                      : "cn.jreborn.base:lib_glide:$jreborn_version",
+            "lib_jpush"                      : "cn.jreborn.base:lib_jpush:$jreborn_version",
+            "lib_livedata"                   : "cn.jreborn.base:lib_livedata:$jreborn_version",
+            "lib_lbsamap"                    : "cn.jreborn.base:lib_lbsamap:$jreborn_version",
+            "lib_bdmap"                      : "cn.jreborn.base:lib_bdmap:$jreborn_version",
+            "lib_network"                    : "cn.jreborn.base:lib_network:$jreborn_version",
+            "lib_notification"               : "cn.jreborn.base:lib_notification:$jreborn_version",
+            "lib_picker"                     : "cn.jreborn.base:lib_picker:$jreborn_version",
+            "lib_update"                     : "cn.jreborn.base:lib_update:$jreborn_version",
+            "lib_widget"                     : "cn.jreborn.base:lib_widget:$jreborn_version",
+            "lib_media"                      : "cn.jreborn.base:lib_media:$jreborn_version",
+            "lib_tbs"                        : "cn.jreborn.base:lib_tbs:$jreborn_version",
+            "module_base"                    : "cn.jreborn.base:module_base:$jreborn_version",
+    ]
+
+}
